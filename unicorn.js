@@ -1,7 +1,15 @@
 /* Use as you please, no attribution necessary */
 /* Thanks to the dudes at http://jqueryboilerplate.com/ for speeding up development time */
 
-;(function ( $, window, document, undefined ) {
+;(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+} (function ( $, window, document, undefined ) {
 		// Create the defaults once
 		var pluginName = "unicorn",
 				defaults = {
@@ -133,4 +141,4 @@
 				return this;
 		};
 
-})( jQuery, window, document );
+}));
